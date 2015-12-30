@@ -1,0 +1,10 @@
+<weather>
+        <month year="2015" name="January">32 Degree</month>
+        <month year="2015" name="February">14 Degree</month>
+        <month year="2015" name="March">24 Degree</month>
+        <month year="2015" name="April">34 Degree</month>
+        <month year="2014" name="January">22 Degree</month>
+        <month year="2014" name="February">4 Degree</month>
+        <month year="2014" name="March">44 Degree</month>
+        <month year="2014" name="April">11 Degree</month>
+</weather>
