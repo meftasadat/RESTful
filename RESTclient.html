@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Safe search</title>
+    </head>
+    <body>
+        <h2>View Weather Data</h2>
+        <p>Click the button below to see full weather data</p>
+        <button id="myButton" class="float-left submit-button" >Show Weather Data</button>
+<p>
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://localhost:8080/weather";
+    };
+</script>
+
+<h2>View Report in Json</h2>
+       <p>Click the button below to Fetch Wether Report Json file</p>
+        <button id="myButton2" class="float-left submit-button" >View Json</button>
+<p>
+<script type="text/javascript">
+    document.getElementById("myButton2").onclick = function () {
+        location.href = "http://localhost:8080/weather.json";
+    };
+</script>
+
+<h2>Yearly and/or Monthly Weather</h2>
+
+     <form id="form" onsubmit="return false;">
+        <table>
+            <tr>
+  <td>  <p>Year</p></td><td><input type="text" id="userInput" /></td>
+</tr>
+    <tr>
+        <td><p>Month</p></td><td><input type="text" id="userInput2" /></td>
+    </tr>
+<tr><td></td></tr><tr><td></td></tr>
+<tr>  <td><input  type="submit" value="Fetch Weather" onclick="othername();"/></td></tr>
+</table>
+
+</form>
+<script>
+function othername() {
+    var input = document.getElementById("userInput").value;
+    var input2 = document.getElementById("userInput2").value;
+    if(input=="" && input2==""){
+        alert("Specify Year and Month")
+    }
+    else if(input2==""){
+    location.href = "http://localhost:8080/weather/"+input;
+    }
+    else{
+      location.href = "http://localhost:8080/weather/"+input+"/"+input2;  
+    }
+
+}
+</script>
+
+<h2>Temperature Conversion</h2>
+
+     <form id="form2" onsubmit="return false;">
+        <table>
+            <tr>
+  <td>  <p>Temperature</p></td><td><input type="text" id="userInput3" /></td>
+<td>
+  <select id="temp">
+    <option value="f2c">Farenheite</option>
+    <option value="c2f">Celcius</option>
+  </select>
+</td>
+</tr>
+   
+<tr><td></td></tr><tr><td></td></tr>
+<tr>  <td><input  type="submit" value="Convert" onclick="othername2();"/></td>
+
+</tr>
+</table>
+
+</form>
+<script>
+function othername2() {
+    var e = document.getElementById("temp");
+    var strUser = e.options[e.selectedIndex].value;
+    var input3 = document.getElementById("userInput3").value;
+    if(input3==""){
+        alert("Specify")
+    }
+    else if(strUser=="f2c"){
+        
+    location.href = "http://localhost:8080/f2c/"+input3;
+    }
+    else{
+      location.href = "http://localhost:8080/c2f/"+input3;  
+    }
+
+}
+</script>
+
+</body>
+</html>
